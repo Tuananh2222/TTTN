@@ -18,21 +18,21 @@
               <ul class="d-flex justify-content-end list-unstyled">
                 <li>
                   <a href="#">
-                    <i class="icon icon-user"></i>
+                    <font-awesome-icon icon="fa-user"/>
                   </a>
                 </li>
                 <li>
                   <a href="cart.html">
-                    <i class="icon icon-clipboard"></i>
+                    <font-awesome-icon icon="fa-clipboard"/>
                   </a>
                 </li>
                 <li>
                   <a href="#like">
-                    <i class="icon icon-heart"></i>
+                    <font-awesome-icon icon="fa-heart"/>
                   </a>
                 </li>
                 <li class="user-items">
-                  <i class="icon icon-search"></i>
+                  <font-awesome-icon icon="fa-search"/>
                 </li>
               </ul>
             </div>
@@ -96,12 +96,21 @@
 <script lang="ts" setup></script>
 
 <style lang="scss" scoped>
-.header_section {
-  padding: 15px 0;
+.secondary-nav,
+.secondary-nav p {
+  line-height: 2.5em;
 }
-
-.header_section .container-fluid {
-  padding-right: 25px;
-  padding-left: 25px;
+.secondary-nav li {
+  padding-right: 10px;
+}
+.secondary-nav li:last-child {
+  padding-right: 0;
+}
+.secondary-nav a {
+  color: $accent-color;
+}
+.secondary-nav ul,
+.secondary-nav p {
+  margin-bottom: 0;
 }
 </style>
