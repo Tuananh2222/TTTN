@@ -92,7 +92,6 @@ ol ol {
 }
 ul li,
 ol li {
-  margin-bottom: 5px;
   outline: 0;
 }
 ul li.active a {
@@ -431,9 +430,6 @@ ol ol,
 ol ul {
   margin: 1.5rem 0 1.5rem 3rem;
   font-size: 90%;
-}
-li {
-  margin-bottom: 1rem;
 }
 
 /*------------------------------------------------
@@ -985,7 +981,7 @@ img.image-circle {
   margin-bottom: 7.5em;
 }
 
-@media only screen and (max-width: 768px) {
+@include sp {
   .margin-small,
   .margin-medium,
   .margin-large,
@@ -1437,7 +1433,6 @@ blockquote cite {
 /* -- Header Top
 --------------------------------------------------------------*/
 
-
 /* - Search Form hover Effects
 ------------------------------------------------------------- */
 .user-items i.icon.icon-search {
@@ -1447,39 +1442,7 @@ blockquote cite {
 }
 
 /* search box */
-.search-box {
-  position: relative;
-  background: $dark-color;
-  width: 100%;
-  height: 0px;
-  overflow: hidden;
-  transition: height 0.3s ease-out;
-}
-.search-box.active {
-  height: 140px;
-}
-.search-box #search-form {
-  margin: 0;
-}
-.search-box .icon-search {
-  margin-left: -60px;
-}
-.search-box input.search-input {
-  font-size: 1.2em;
-  color: $light-color;
-  width: 40%;
-  min-width: 420px;
-  padding: 30px;
-  margin-top: 35px;
-  border-radius: 80px;
-  border-color: rgb(255 255 255 / 30%);
-}
-.close-button {
-  position: absolute;
-  top: 40px;
-  right: 60px;
-  cursor: pointer;
-}
+
 /* - Main Navigation
 ------------------------------------------------------------- */
 #navbar ul.menu-list a {
@@ -1496,7 +1459,7 @@ blockquote cite {
   color: #191919;
 }
 
-@media only screen and (max-width: 1599px) {
+@include sp {
   .main-menu .hamburger {
     display: block;
   }
