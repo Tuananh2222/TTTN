@@ -5,7 +5,7 @@
         <font-awesome-icon icon="fa-close" />
       </div>
       <form id="search-form" class="text-center" action="" method="">
-        <input type="text" v-model="inputValue" class="search-input" placeholder="Search..." />
+        <input type="text" class="search-input" placeholder="Search..." />
         <div class="icon-search" @click="emits('search')">
           <font-awesome-icon icon="fa-search" />
         </div>

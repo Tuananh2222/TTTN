@@ -1449,90 +1449,12 @@ blockquote cite {
   font-weight: 600;
   padding-left: 45px;
 }
-.main-menu .hamburger {
-  display: none;
-}
+
 .main-menu.stellarnav > ul > li > a {
   padding: 10px 30px;
   font-weight: 500;
   font-size: 17px;
   color: #191919;
-}
-
-@include sp {
-  .main-menu .hamburger {
-    display: block;
-  }
-  .main-menu .hamburger .bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    background-color: $dark-color;
-  }
-  .navbar ul.menu-list {
-    position: fixed;
-    top: 0;
-    left: -100px;
-    width: 50%;
-    flex-direction: column;
-    text-align: center;
-    transition: 0.8s;
-    z-index: 9;
-  }
-  .navbar ul.menu-list li {
-    opacity: 0;
-  }
-  .navbar ul.menu-list.responsive {
-    top: 0;
-    left: 0;
-    padding-top: 100px;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    z-index: 99;
-    display: flex;
-    padding: 100px 40px;
-    width: 50%;
-  }
-  .navbar ul.menu-list.responsive li.menu-item {
-    margin-bottom: 30px;
-    text-align: left;
-    opacity: 1;
-  }
-  .navbar ul.menu-list.responsive a {
-    font-size: 1.8em;
-    color: $light-color;
-    border-bottom: none;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-  }
-  .navbar ul.menu-list.responsive a:after {
-    content: '\e90b';
-    font-size: 25px;
-    font-family: 'icomoon';
-  }
-  .navbar .hamburger {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 999;
-    cursor: pointer;
-    background: $light-grey-color;
-    padding: 10px;
-  }
-  .hamburger.active .bar:nth-child(2) {
-    opacity: 0;
-  }
-  .hamburger.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-  .hamburger.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
 }
 
 /*----- Billboard
@@ -2084,32 +2006,6 @@ i.icon.icon-arrow-io {
   line-height: 1.2;
   font-weight: 400;
   margin: 20px 0;
-}
-
-/*----- Footer Section
---------------------------------------------------------------*/
-#footer .footer-menu {
-  margin-right: 50px;
-}
-.footer-menu h5.widget-title {
-  font-size: 1.3em;
-  font-weight: 800;
-  margin-top: 0;
-  margin-bottom: 40px;
-}
-.footer-menu ul.menu-list a {
-  color: $accent-color;
-}
-.footer-menu ul.menu-list a:hover {
-  color: $primary-color;
-}
-.footer-menu a.email {
-  color: $accent-color;
-  text-decoration: underline;
-  font-weight: 600;
-}
-.social-links li {
-  padding-right: 20px;
 }
 
 /*----- Footer Bottom Section

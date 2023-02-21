@@ -1,94 +1,137 @@
 <template>
-  <div class="container">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis nesciunt nulla, sequi vitae eveniet eius
-    distinctio beatae et numquam nihil ex possimus vero quasi labore illo sapiente ducimus delectus dicta.
+  <div id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-menu-list">
+          <div class="row d-flex flex-wrap justify-content-between">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="footer-menu">
+                <h5 class="widget-title">NyLy</h5>
+                <ul class="menu-list list-unstyled">
+                  <li class="menu-item">
+                    <a href="#">About us</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#">Conditions </a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#">Our Journals</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#">Careers</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#">Affiliate Programme</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#">NyLy Press</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="footer-menu">
+                <h5 class="widget-title">Customer Service</h5>
+                <ul class="menu-list list-unstyled">
+                  <li class="menu-item">
+                    <a href="#">FAQ</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#">Contact</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#">Privacy Policy</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#">Returns & Refunds</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#">Cookie Guidelines</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#">Delivery Information</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="footer-menu">
+                <h5 class="widget-title">Contact Us</h5>
+                <p>Do you have any questions or suggestions? <a href="#" class="email">vut5441@gmail.com</a></p>
+                <p>
+                  Do you need assistance? Give us a call. <br />
+                  <strong>0971935724</strong>
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="footer-menu">
+                <h5 class="widget-title">Forever 2018</h5>
+                <p>
+                  Cras mattis sit ornare in metus eu amet adipiscing enim. Ullamcorper in orci, ultrices integer eget
+                  arcu. Consectetur leo dignissim lacus, lacus sagittis dictumst.
+                </p>
+                <div class="social-links">
+                  <ul class="d-flex list-unstyled">
+                    <li>
+                      <a href="#">
+                        <font-awesome-icon icon="fa-brands fa-facebook" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <font-awesome-icon icon="fa-brands fa-twitter" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <font-awesome-icon icon="fa-brands fa-youtube" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <font-awesome-icon icon="fa-brands fa-square-behance" />
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
-<script lang="ts" setup>
-import { USER_TYPE_PERSONAL } from '~~/utils/constant/userStore'
-
-const common = useCommon()
-
-const userStore = useUserStore()
-</script>
+<script lang="ts" setup></script>
 <style lang="scss" scoped>
-.container {
-  position: relative;
-  width: 100%;
-  height: fit-content;
-  padding: 30px 0;
-  .content {
-    max-width: 90%;
-    width: 800px;
-    margin: auto;
-  }
-  .button_scoll_top {
-    position: absolute;
-    width: 90px;
-    height: 62px;
-    right: 0;
-    top: 0;
-    background-color: $primary;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-bottom-left-radius: 12px;
-    cursor: pointer;
-    &:hover {
-      opacity: 0.9;
-    }
-    .text-button-scroll {
-      font-size: 10px;
-      font-family: Roboto;
-      font-style: black;
-      margin-top: 0.25rem;
-      font-weight: 900;
-    }
-
-    .arrow-top {
-    }
-  }
-  .options {
-    font-size: 12px;
-    @include sp {
-      display: flex;
-      flex-direction: column;
-    }
-    span {
-      margin-right: 20px;
-      &:hover {
-        opacity: 0.8;
-        cursor: pointer;
-      }
-    }
-  }
-  .options-bottom {
-    opacity: 0.3;
-    height: 1px;
-    margin: 30px 0;
-  }
-  .company {
-    font-size: 12px;
-    margin-bottom: 12px;
-  }
-  .content-bottom {
-    font-size: 10px;
-    @include sp {
-      display: flex;
-      flex-direction: column;
-    }
+#footer .footer-menu {
+  margin-right: 50px;
+}
+.footer-menu h5.widget-title {
+  font-size: 1.3em;
+  font-weight: 800;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+.footer-menu {
+  strong {
+    font-weight: bold;
   }
 }
-.text-center {
-  text-align: center;
+.footer-menu ul.menu-list a {
+  color: $accent-color;
 }
-.my-2 {
-  margin: 20px 0;
+.footer-menu ul.menu-list a:hover {
+  color: $primary-color;
 }
-.mr-12px {
-  margin-right: 12px;
+.footer-menu a.email {
+  color: $accent-color;
+  text-decoration: underline;
+  font-weight: 600;
+}
+.social-links li {
+  padding-right: 20px;
 }
 </style>

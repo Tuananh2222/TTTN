@@ -1,12 +1,12 @@
 <template>
   <SearchBox v-if="isShowSearch" @close-search="handleHideSearch" />
-  <div id="header-wrap">
-    <nav class="secondary-nav border-bottom">
+  <div id="header-wrap" border-bottom>
+    <nav class="secondary-nav">
       <div class="container">
         <div class="row">
           <div class="col-md-4 col-sm-12">
             <div class="header-contact">
-              <p>Call me! <strong>0971 935 724</strong></p>
+              <p>Hotline: <b>0971935724</b></p>
             </div>
           </div>
           <div class="col-md-4 col-sm-6">
@@ -41,61 +41,13 @@
         </div>
       </div>
     </nav>
-    <nav class="primary-nav padding-small">
-      <div class="container">
-        <div class="row d-flex">
-          <div class="col-lg-2 col-md-2">
-            <div class="main-logo">
-              <a href="index.html">
-                <img src="images/main-logo.png" alt="logo" />
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-10 col-md-10">
-            <div class="navbar">
-              <div class="main-menu stellarnav">
-                <ul class="menu-list list-unstyled">
-                  <li class="menu-item active">
-                    <a href="#women" data-effect="Women">Women</a>
-                  </li>
-                  <li class="menu-item">
-                    <a href="#men" class="item-anchor" data-effect="Men">Men</a>
-                  </li>
-                  <li class="menu-item">
-                    <a href="#kids" class="item-anchor" data-effect="Kids">Kids</a>
-                  </li>
-                  <li class="menu-item">
-                    <a href="#accessories" class="item-anchor" data-effect="Accessories">Accessories</a>
-                  </li>
-                  <li class="menu-item">
-                    <a href="#collections" class="item-anchor" data-effect="Collections">Collections</a>
-                  </li>
-                  <li class="menu-item">
-                    <a href="#brand" class="item-anchor" data-effect="Brand">Brand</a>
-                  </li>
-                  <li class="menu-item">
-                    <a href="#sale" class="item-anchor" data-effect="Sale">Sale</a>
-                  </li>
-                  <li class="menu-item">
-                    <a href="#blog" class="item-anchor" data-effect="Blog">Blog</a>
-                  </li>
-                </ul>
-                <div class="hamburger">
-                  <span class="bar"></span>
-                  <span class="bar"></span>
-                  <span class="bar"></span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
+    <Menu />
   </div>
 </template>
 
 <script lang="ts" setup>
 import SearchBox from '~~/components/generals/SearchBox.vue'
+import Menu from './Menu.vue'
 const isShowSearch = ref(false)
 
 const handleShowSearch = () => {
@@ -127,6 +79,11 @@ const handleHideSearch = () => {
 .row {
   display: flex;
   align-items: center;
+  .header-contact {
+    b {
+      font-weight: bold;
+    }
+  }
 }
 .user-items {
   cursor: pointer;
