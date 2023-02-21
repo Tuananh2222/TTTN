@@ -1,4 +1,5 @@
 <template>
+  <SearchBox v-if="isShowSearch" @close-search="handleHideSearch" />
   <div id="header-wrap">
     <nav class="secondary-nav border-bottom">
       <div class="container">
@@ -18,21 +19,21 @@
               <ul class="d-flex justify-content-end list-unstyled">
                 <li>
                   <a href="#">
-                    <font-awesome-icon icon="fa-user"/>
+                    <font-awesome-icon icon="fa-user" />
                   </a>
                 </li>
                 <li>
                   <a href="cart.html">
-                    <font-awesome-icon icon="fa-clipboard"/>
+                    <font-awesome-icon icon="fa-clipboard" />
                   </a>
                 </li>
                 <li>
                   <a href="#like">
-                    <font-awesome-icon icon="fa-heart"/>
+                    <font-awesome-icon icon="fa-heart" />
                   </a>
                 </li>
-                <li class="user-items">
-                  <font-awesome-icon icon="fa-search"/>
+                <li class="user-items" @click="handleShowSearch">
+                  <font-awesome-icon icon="fa-search" />
                 </li>
               </ul>
             </div>
@@ -93,7 +94,17 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import SearchBox from '~~/components/generals/SearchBox.vue'
+const isShowSearch = ref(false)
+
+const handleShowSearch = () => {
+  isShowSearch.value = true
+}
+const handleHideSearch = () => {
+  isShowSearch.value = false
+}
+</script>
 
 <style lang="scss" scoped>
 .secondary-nav,
@@ -112,5 +123,12 @@
 .secondary-nav ul,
 .secondary-nav p {
   margin-bottom: 0;
+}
+.row {
+  display: flex;
+  align-items: center;
+}
+.user-items {
+  cursor: pointer;
 }
 </style>
