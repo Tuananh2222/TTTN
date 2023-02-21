@@ -1,7 +1,5 @@
-import lodash from 'lodash'
-const { throttle, camelCase } = lodash
 import { SSR_DEFAULT_SCREEN_SIZE_HEIGHT, SSR_DEFAULT_SCREEN_SIZE_WIDTH } from '~~/utils/constant'
-import { BREAKPOINT, PREVENT_DOUBLE_CLICK_DELAY, DATE_FORMAT } from '~~/utils/constant'
+import { BREAKPOINT, DATE_FORMAT } from '~~/utils/constant'
 export default function () {
   const { $dayjs } = useNuxtApp()
 
