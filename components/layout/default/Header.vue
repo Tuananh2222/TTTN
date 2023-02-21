@@ -5,7 +5,7 @@
         <div class="row">
           <div class="col-md-4 col-sm-12">
             <div class="header-contact">
-              <p>Let's talk! <strong>+57 444 11 00 35</strong></p>
+              <p>Call me! <strong>0971 935 724</strong></p>
             </div>
           </div>
           <div class="col-md-4 col-sm-6">
