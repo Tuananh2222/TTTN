@@ -19,7 +19,7 @@ export const useHeaderStore = defineStore('header', () => {
         axios.get('/header.json'),
       ])
       console.log(headerList)
-      state.headerList = headerList
+      state.headerList = headerList.data
     } catch (e: any) {
       if (e.response && axios.isAxiosError(e) && [400, 422].includes(e.response.status)) {
         //handle 400 and 422 error in here
