@@ -48,6 +48,10 @@
 <script lang="ts" setup>
 import SearchBox from '~~/components/generals/SearchBox.vue'
 import Menu from './Menu.vue'
+const { init, state } = useHeaderStore()
+onMounted(() => {
+  init()
+})
 const isShowSearch = ref(false)
 
 const handleShowSearch = () => {
