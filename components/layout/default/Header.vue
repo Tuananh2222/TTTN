@@ -6,6 +6,7 @@
         <div class="row">
           <div class="col-md-4 col-sm-12">
             <div class="header-contact">
+              <font-awesome-icon icon="fa-solid fa-phone" />
               <p>Hotline: <b>0971935724</b></p>
             </div>
           </div>
@@ -84,6 +85,11 @@ const handleHideSearch = () => {
   display: flex;
   align-items: center;
   .header-contact {
+    display: flex;
+    align-items: center;
+    p {
+      margin-left: 5px;
+    }
     b {
       font-weight: bold;
     }

@@ -10,25 +10,22 @@
             <div class="main-menu stellarnav">
               <ul :class="['list-unstyled menu-list ', isShowMenu ? 'menu-list ' : 'responsive']">
                 <li class="menu-item active">
-                  <a href="#women" data-effect="Women">Women</a>
+                  <a href="#women" data-effect="Women">Trang chủ</a>
                 </li>
                 <li class="menu-item">
-                  <a href="#men" class="item-anchor" data-effect="Men">Men</a>
+                  <a href="#men" class="item-anchor" data-effect="Men">Sản phẩm hot</a>
                 </li>
                 <li class="menu-item">
-                  <a href="#kids" class="item-anchor" data-effect="Kids">Kids</a>
+                  <a href="#kids" class="item-anchor" data-effect="Kids">Chăm sóc da</a>
                 </li>
                 <li class="menu-item">
-                  <a href="#accessories" class="item-anchor" data-effect="Accessories">Accessories</a>
+                  <a href="#accessories" class="item-anchor" data-effect="Accessories">Trang điểm</a>
                 </li>
                 <li class="menu-item">
-                  <a href="#collections" class="item-anchor" data-effect="Collections">Collections</a>
+                  <a href="#collections" class="item-anchor" data-effect="Collections">Deal khuyến mãi</a>
                 </li>
                 <li class="menu-item">
-                  <a href="#brand" class="item-anchor" data-effect="Brand">Brand</a>
-                </li>
-                <li class="menu-item">
-                  <a href="#sale" class="item-anchor" data-effect="Sale">Sale</a>
+                  <a href="#brand" class="item-anchor" data-effect="Brand">Về chúng tôi</a>
                 </li>
                 <li class="menu-item">
                   <a href="#blog" class="item-anchor" data-effect="Blog">Blog</a>
@@ -137,6 +134,14 @@ const handleMenu = () => {
     background: $light-grey-color;
     padding: 10px;
   }
+  .main-menu.stellarnav > ul > li > a {
+    padding: 10px 30px;
+    font-weight: 500;
+    font-size: 17px;
+    color: #191919;
+    text-transform: uppercase;
+  }
+
   .hamburger.active .bar:nth-child(2) {
     opacity: 0;
   }

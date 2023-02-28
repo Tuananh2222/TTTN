@@ -45,7 +45,7 @@
     "dayjs": "^1.11.7",
     "lodash": "^4.17.21",
     "qrcode.vue": "^3.3.3",
-    "swiper": "^8.4.5",
+    "swiper": "^8.4.7",
     "v-calendar": "^3.0.0-alpha.8",
     "vue": "^3.2.45",
     "vue-cookies": "^1.8.2",
