@@ -106,6 +106,10 @@
 
 <script lang="ts" setup></script>
 <style lang="scss" scoped>
+#footer{
+  padding-top: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
 #footer .footer-menu {
   margin-right: 50px;
 }

@@ -43,6 +43,7 @@
     "axios": "^1.2.1",
     "bootstrap": "^5.2.3",
     "dayjs": "^1.11.7",
+    "firebase": "^9.17.2",
     "lodash": "^4.17.21",
     "qrcode.vue": "^3.3.3",
     "swiper": "^8.4.7",

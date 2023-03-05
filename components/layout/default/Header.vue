@@ -42,7 +42,9 @@
         </div>
       </div>
     </nav>
-    <Menu />
+    <Menu 
+    @next-to="nextPageUser"
+    />
   </div>
 </template>
 
@@ -61,9 +63,17 @@ const handleShowSearch = () => {
 const handleHideSearch = () => {
   isShowSearch.value = false
 }
+
+const nextPageUser = ({ router}: { router: string }) => {
+  navigateTo(router)
+}
 </script>
 
 <style lang="scss" scoped>
+#header-wrap{
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
 .secondary-nav,
 .secondary-nav p {
   line-height: 2.5em;

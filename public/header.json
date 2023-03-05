@@ -1,20 +1,26 @@
 [
     {
-        "text": "Trang chủ"
+        "text": "Trang chủ",
+        "to":"/"
     },
     {
-        "text": "Sản phẩm hot"
+        "text": "Sản phẩm hot",
+        "to":"/selling-products"
     },
     {
-        "text": "Chăm sóc da"
+        "text": "Chăm sóc da",
+        "to":"/skin-care"
     },
     {
-        "text": "Trang điểm"
+        "text": "Trang điểm",
+        "to":"/make-up"
     },
     {
-        "text": "Deal khuyến mãi"
+        "text": "Deal khuyến mãi",
+        "to":"/promotional-deals"
     },
     {
-        "text": "NyLy's blog"
+        "text": "NyLy's blog",
+        "to":"/blog"
     }
 ]

@@ -116,7 +116,6 @@ dd {
   margin-left: 0;
 }
 button,
-input,
 select,
 textarea {
   font-family: inherit;
@@ -346,13 +345,11 @@ i {
 input[type='email'],
 input[type='number'],
 input[type='search'],
-input[type='text'],
 input[type='tel'],
 input[type='url'],
 input[type='password'],
 textarea,
 select {
-  height: 50px;
   padding: 6px 15px;
   // background-color: $light-background-color;
   border: 1px solid $grey-color;
@@ -364,7 +361,6 @@ select {
 input[type='email'],
 input[type='number'],
 input[type='search'],
-input[type='text'],
 input[type='tel'],
 input[type='url'],
 input[type='password'],
@@ -381,7 +377,6 @@ textarea {
 input[type='email']:focus,
 input[type='number']:focus,
 input[type='search']:focus,
-input[type='text']:focus,
 input[type='tel']:focus,
 input[type='url']:focus,
 input[type='password']:focus,
@@ -472,7 +467,6 @@ button,
 .button {
   margin-bottom: 1rem;
 }
-input,
 textarea,
 select,
 fieldset {
@@ -1977,13 +1971,6 @@ i.icon.icon-arrow-io {
   max-width: 100%;
   height: auto;
   z-index: -100;
-}
-.container {
-  width: 97%;
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
 }
 
 .container-fluid {

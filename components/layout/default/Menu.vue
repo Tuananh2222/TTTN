@@ -9,26 +9,13 @@
           <div class="navbar">
             <div class="main-menu stellarnav">
               <ul :class="['list-unstyled menu-list ', isShowMenu ? 'menu-list ' : 'responsive']">
-                <li class="menu-item active">
-                  <a href="#women" data-effect="Women">Trang chủ</a>
-                </li>
-                <li class="menu-item">
-                  <a href="#men" class="item-anchor" data-effect="Men">Sản phẩm hot</a>
-                </li>
-                <li class="menu-item">
-                  <a href="#kids" class="item-anchor" data-effect="Kids">Chăm sóc da</a>
-                </li>
-                <li class="menu-item">
-                  <a href="#accessories" class="item-anchor" data-effect="Accessories">Trang điểm</a>
-                </li>
-                <li class="menu-item">
-                  <a href="#collections" class="item-anchor" data-effect="Collections">Deal khuyến mãi</a>
-                </li>
-                <li class="menu-item">
-                  <a href="#brand" class="item-anchor" data-effect="Brand">Về chúng tôi</a>
-                </li>
-                <li class="menu-item">
-                  <a href="#blog" class="item-anchor" data-effect="Blog">Blog</a>
+                <li
+                  v-for="(item, index) in state.headerList"
+                  :key="index"
+                  class="menu-item"
+                  @click="emits('nextTo', { router: item.to })"
+                >
+                  <a>{{ item.text }}</a>
                 </li>
               </ul>
               <div class="hamburger" @click="handleMenu">
@@ -46,11 +33,17 @@
 
 <script setup>
 const isShowMenu = ref(true)
-
+const { state, init } = useHeaderStore()
 const props = defineProps({})
 const handleMenu = () => {
   isShowMenu.value = !isShowMenu.value
 }
+const emits = defineEmits(['nextTo'])
+
+onMounted(() => {
+  init()
+})
+console.log(state)
 </script>
 
 <style lang="scss" scoped>
@@ -65,6 +58,10 @@ const handleMenu = () => {
   height: 80px;
   width: 80px;
   border-radius: 50%;
+}
+.stellarnav li {
+  cursor: pointer;
+
 }
 .main-menu .hamburger {
   display: none;
