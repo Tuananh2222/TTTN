@@ -1,40 +1,99 @@
 <template>
-  <div class="container">
-    <div class="screen">
-      <div class="screen__content">
-        <form class="login">
-          <div class="login__field">
-            <div class="login__icon"><font-awesome-icon icon="fa-solid fa-user" /></div>
-            <input type="text" class="login__input" placeholder="User name / Email" />
-          </div>
-          <div class="login__field">
-            <div class="login__icon"><font-awesome-icon icon="fa-solid fa-lock" /></div>
-            <input type="password" class="login__input" placeholder="Password" />
-          </div>
-          <button class="button login__submit">
-            <span class="button__text">Log In Now</span>
-            <div class="button__icon"><font-awesome-icon icon="fa-regular fa-chevron-right" /></div>
-          </button>
-        </form>
-        <div class="social-login">
-          <h3>log in via</h3>
-          <div class="social-icons">
-            <div class="social-login__icon"><font-awesome-icon icon="fa-brands fa-google" /></div>
-            <div class="social-login__icon"><font-awesome-icon icon="fa-brands fa-facebook" /></div>
+  <div class="section">
+    <div class="container">
+      <div class="row full-height justify-content-center">
+        <div class="col-12 text-center align-self-center py-5">
+          <div class="section pb-5 pt-5 pt-sm-2 text-center">
+            <h6 class="mb-0 pb-3"><span>Log In </span><span>Sign Up</span></h6>
+            <input class="checkbox" type="checkbox" id="reg-log" name="reg-log" />
+            <label for="reg-log"></label>
+            <div class="card-3d-wrap mx-auto">
+              <div class="card-3d-wrapper">
+                <div class="card-front">
+                  <div class="center-wrap">
+                    <div class="section text-center">
+                      <h4 class="mb-4 pb-3">Log In</h4>
+                      <div class="form-group">
+                        <input
+                          type="email"
+                          name="logemail"
+                          class="form-style"
+                          placeholder="Your Email"
+                          id="logemail"
+                          autocomplete="off"
+                        />
+                        <i class="input-icon uil uil-at"></i>
+                      </div>
+                      <div class="form-group mt-2">
+                        <input
+                          type="password"
+                          name="logpass"
+                          class="form-style"
+                          placeholder="Your Password"
+                          id="logpass"
+                          autocomplete="off"
+                        />
+                        <i class="input-icon uil uil-lock-alt"></i>
+                      </div>
+                      <a href="#" class="btn mt-4">submit</a>
+                      <p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your password?</a></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <div class="center-wrap">
+                    <div class="section text-center">
+                      <h4 class="mb-4 pb-3">Sign Up</h4>
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          name="logname"
+                          class="form-style"
+                          placeholder="Your Full Name"
+                          id="logname"
+                          autocomplete="off"
+                        />
+                        <i class="input-icon uil uil-user"></i>
+                      </div>
+                      <div class="form-group mt-2">
+                        <input
+                          type="email"
+                          name="logemail"
+                          class="form-style"
+                          placeholder="Your Email"
+                          id="logemail"
+                          autocomplete="off"
+                        />
+                        <i class="input-icon uil uil-at"></i>
+                      </div>
+                      <div class="form-group mt-2">
+                        <input
+                          type="password"
+                          name="logpass"
+                          class="form-style"
+                          placeholder="Your Password"
+                          id="logpass"
+                          autocomplete="off"
+                        />
+                        <i class="input-icon uil uil-lock-alt"></i>
+                      </div>
+                      <a href="#" class="btn mt-4">submit</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="screen__background">
-        <span class="screen__background__shape screen__background__shape4"></span>
-        <span class="screen__background__shape screen__background__shape3"></span>
-        <span class="screen__background__shape screen__background__shape2"></span>
-        <span class="screen__background__shape screen__background__shape1"></span>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  layout: 'other',
+})
 // import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
 
 // const email = ref<string>('')
@@ -55,169 +114,277 @@
 </script>
 
 <style lang="scss" scoped>
-// .container {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   min-height: 100vh;
-// }
+a {
+  cursor: pointer;
+  transition: all 200ms linear;
+}
+a:hover {
+  text-decoration: none;
+}
+.link {
+  color: #c4c3ca;
+}
+.link:hover {
+  color: #ffeba7;
+}
+p {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.7;
+}
+h4 {
+  font-weight: 600;
+}
+h6 span {
+  padding: 0 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.section {
+  position: relative;
+  width: 100%;
+  display: block;
+}
+.full-height {
+  min-height: 100vh;
+}
+[type='checkbox']:checked,
+[type='checkbox']:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+.checkbox:checked + label,
+.checkbox:not(:checked) + label {
+  position: relative;
+  display: block;
+  text-align: center;
+  width: 60px;
+  height: 16px;
+  border-radius: 8px;
+  padding: 0;
+  margin: 10px auto;
+  cursor: pointer;
+  background-color: #ffeba7;
+}
+.checkbox:checked + label:before,
+.checkbox:not(:checked) + label:before {
+  position: absolute;
+  display: block;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: #ffeba7;
+  background-color: #102770;
+  font-family: 'unicons';
+  content: '\eb4f';
+  z-index: 20;
+  top: -10px;
+  left: -10px;
+  line-height: 36px;
+  text-align: center;
+  font-size: 24px;
+  transition: all 0.5s ease;
+}
+.checkbox:checked + label:before {
+  transform: translateX(44px) rotate(-270deg);
+}
 
-// .screen {
-//   background: linear-gradient(90deg, #5d54a4, #7c78b8);
-//   position: relative;
-//   height: 600px;
-//   width: 360px;
-//   box-shadow: 0px 0px 24px #5c5696;
-// }
+.card-3d-wrap {
+  position: relative;
+  width: 440px;
+  max-width: 100%;
+  height: 400px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  perspective: 800px;
+  margin-top: 60px;
+}
+.card-3d-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  transition: all 600ms ease-out;
+}
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  background-color: #2a2b38;
+  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: 300%;
+  position: absolute;
+  border-radius: 6px;
+  left: 0;
+  top: 0;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.card-back {
+  transform: rotateY(180deg);
+}
+.checkbox:checked ~ .card-3d-wrap .card-3d-wrapper {
+  transform: rotateY(180deg);
+}
+.center-wrap {
+  position: absolute;
+  width: 100%;
+  padding: 0 35px;
+  top: 50%;
+  left: 0;
+  transform: translate3d(0, -50%, 35px) perspective(100px);
+  z-index: 20;
+  display: block;
+}
 
-// .screen__content {
-//   z-index: 1;
-//   position: relative;
-//   height: 100%;
-// }
+.form-group {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.form-style {
+  padding: 13px 20px;
+  padding-left: 55px;
+  height: 48px;
+  width: 100%;
+  font-weight: 500;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0.5px;
+  outline: none;
+  color: #c4c3ca;
+  background-color: #1f2029;
+  border: none;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+  box-shadow: 0 4px 8px 0 rgba(21, 21, 21, 0.2);
+}
+.form-style:focus,
+.form-style:active {
+  border: none;
+  outline: none;
+  box-shadow: 0 4px 8px 0 rgba(21, 21, 21, 0.2);
+}
+.input-icon {
+  position: absolute;
+  top: 0;
+  left: 18px;
+  height: 48px;
+  font-size: 24px;
+  line-height: 48px;
+  text-align: left;
+  color: #ffeba7;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
 
-// .screen__background {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   bottom: 0;
-//   z-index: 0;
-//   -webkit-clip-path: inset(0 0 0 0);
-//   clip-path: inset(0 0 0 0);
-// }
+.form-group input:-ms-input-placeholder {
+  color: #c4c3ca;
+  opacity: 0.7;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+.form-group input::-moz-placeholder {
+  color: #c4c3ca;
+  opacity: 0.7;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+.form-group input:-moz-placeholder {
+  color: #c4c3ca;
+  opacity: 0.7;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+.form-group input::-webkit-input-placeholder {
+  color: #c4c3ca;
+  opacity: 0.7;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+.form-group input:focus:-ms-input-placeholder {
+  opacity: 0;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+.form-group input:focus::-moz-placeholder {
+  opacity: 0;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+.form-group input:focus:-moz-placeholder {
+  opacity: 0;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+.form-group input:focus::-webkit-input-placeholder {
+  opacity: 0;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
 
-// .screen__background__shape {
-//   transform: rotate(45deg);
-//   position: absolute;
-// }
+.btn {
+  border-radius: 4px;
+  height: 44px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+  padding: 0 30px;
+  letter-spacing: 1px;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  text-align: center;
+  border: none;
+  background-color: #ffeba7;
+  color: #102770;
+  box-shadow: 0 8px 24px 0 rgba(255, 235, 167, 0.2);
+}
+.btn:active,
+.btn:focus {
+  background-color: #102770;
+  color: #ffeba7;
+  box-shadow: 0 8px 24px 0 rgba(16, 39, 112, 0.2);
+}
+.btn:hover {
+  background-color: #102770;
+  color: #ffeba7;
+  box-shadow: 0 8px 24px 0 rgba(16, 39, 112, 0.2);
+}
 
-// .screen__background__shape1 {
-//   height: 520px;
-//   width: 520px;
-//   background: #fff;
-//   top: -50px;
-//   right: 120px;
-//   border-radius: 0 72px 0 0;
-// }
-
-// .screen__background__shape2 {
-//   height: 220px;
-//   width: 220px;
-//   background: #6c63ac;
-//   top: -172px;
-//   right: 0;
-//   border-radius: 32px;
-// }
-
-// .screen__background__shape3 {
-//   height: 540px;
-//   width: 190px;
-//   background: linear-gradient(270deg, #5d54a4, #6a679e);
-//   top: -24px;
-//   right: 0;
-//   border-radius: 32px;
-// }
-
-// .screen__background__shape4 {
-//   height: 400px;
-//   width: 200px;
-//   background: #7e7bb9;
-//   top: 420px;
-//   right: 50px;
-//   border-radius: 60px;
-// }
-
-// .login {
-//   width: 320px;
-//   padding: 30px;
-//   padding-top: 156px;
-// }
-
-// .login__field {
-//   padding: 20px 0px;
-//   position: relative;
-// }
-
-// .login__icon {
-//   position: absolute;
-//   top: 30px;
-//   color: #7875b5;
-// }
-
-// .login__input {
-//   border: none;
-//   border-bottom: 2px solid #d1d1d4;
-//   background: none;
-//   padding: 10px;
-//   padding-left: 24px;
-//   font-weight: 700;
-//   width: 75%;
-//   transition: 0.2s;
-// }
-
-// .login__input:active,
-// .login__input:focus,
-// .login__input:hover {
-//   outline: none;
-//   border-bottom-color: #6a679e;
-// }
-
-// .login__submit {
-//   background: #fff;
-//   font-size: 14px;
-//   margin-top: 30px;
-//   padding: 16px 20px;
-//   border-radius: 26px;
-//   border: 1px solid #d4d3e8;
-//   text-transform: uppercase;
-//   font-weight: 700;
-//   display: flex;
-//   align-items: center;
-//   width: 100%;
-//   color: #4c489d;
-//   box-shadow: 0px 2px 2px #5c5696;
-//   cursor: pointer;
-//   transition: 0.2s;
-// }
-
-// .login__submit:active,
-// .login__submit:focus,
-// .login__submit:hover {
-//   border-color: #6a679e;
-//   outline: none;
-// }
-
-// .button__icon {
-//   font-size: 24px;
-//   margin-left: auto;
-//   color: #7875b5;
-// }
-
-// .social-login {
-//   position: absolute;
-//   height: 140px;
-//   width: 160px;
-//   text-align: center;
-//   bottom: 0px;
-//   right: 0px;
-//   color: #fff;
-// }
-
-// .social-icons {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-// }
-
-// .social-login__icon {
-//   padding: 20px 10px;
-//   color: #fff;
-//   text-decoration: none;
-//   text-shadow: 0px 0px 8px #7875b5;
-// }
-
-// .social-login__icon:hover {
-//   transform: scale(1.5);
-// }
+.logo {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  display: block;
+  z-index: 100;
+  transition: all 250ms linear;
+}
+.logo img {
+  height: 26px;
+  width: auto;
+  display: block;
+}
 </style>

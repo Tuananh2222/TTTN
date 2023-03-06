@@ -1,28 +1,26 @@
 <template>
   <nav class="primary-nav">
     <div class="container">
-      <div class="row d-flex">
-        <div class="col-lg-2 col-md-2">
-          <div class="main-logo"></div>
-        </div>
-        <div class="col-lg-10 col-md-10">
-          <div class="navbar">
-            <div class="main-menu stellarnav">
-              <ul :class="['list-unstyled menu-list ', isShowMenu ? 'menu-list ' : 'responsive']">
-                <li
-                  v-for="(item, index) in state.headerList"
-                  :key="index"
-                  class="menu-item"
-                  @click="emits('nextTo', { router: item.to })"
-                >
-                  <a>{{ item.text }}</a>
-                </li>
-              </ul>
-              <div class="hamburger" @click="handleMenu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-              </div>
+      <div class="img-logo">
+        <div class="main-logo"></div>
+      </div>
+      <div class="navbar-wrapper">
+        <div class="navbar">
+          <div class="main-menu">
+            <ul :class="[isShowMenu ? 'menu-list ' : 'responsive']">
+              <li
+                v-for="(item, index) in state.headerList"
+                :key="index"
+                class="menu-item"
+                @click="emits('nextTo', { router: item.to })"
+              >
+                <a>{{ item.text }}</a>
+              </li>
+            </ul>
+            <div class="hamburger" @click="handleMenu">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
             </div>
           </div>
         </div>
@@ -48,28 +46,59 @@ console.log(state)
 
 <style lang="scss" scoped>
 .primary-nav {
-  .row {
+  .container {
+    width: 100%;
+    display: flex;
     align-items: center;
+    .img-logo {
+      padding-left: 20px;
+      .main-logo {
+        background: url('@/public/image/logo.jpg');
+        background-position: center;
+        height: 80px;
+        width: 80px;
+        border-radius: 50%;
+      }
+    }
+  }
+  .navbar-wrapper {
+    width: 100%;
+    .navbar {
+      display: flex;
+      justify-content: flex-end;
+      @include sp {
+        .navbar ul {
+          position: fixed;
+          top: 0;
+          left: -100px;
+          width: 50%;
+          flex-direction: column;
+          text-align: center;
+          transition: 0.8s;
+          z-index: 9;
+        }
+      }
+      .main-menu {
+        .menu-list {
+          display: flex;
+          list-style: none;
+          .menu-item {
+            cursor: pointer;
+            padding: 10px 20px;
+          }
+        }
+      }
+    }
   }
 }
-.main-logo {
-  background: url('@/public/image/logo.jpg');
-  background-position: center;
-  height: 80px;
-  width: 80px;
-  border-radius: 50%;
-}
-.stellarnav li {
-  cursor: pointer;
 
-}
 .main-menu .hamburger {
   display: none;
-}
-@include sp {
-  .main-menu .hamburger {
+  @include sp {
     display: block;
   }
+}
+@include sp {
   .main-menu .hamburger .bar {
     display: block;
     width: 25px;
@@ -79,20 +108,11 @@ console.log(state)
     transition: all 0.3s ease-in-out;
     background-color: $dark-color;
   }
-  .navbar ul.menu-list {
-    position: fixed;
-    top: 0;
-    left: -100px;
-    width: 50%;
-    flex-direction: column;
-    text-align: center;
-    transition: 0.8s;
-    z-index: 9;
-  }
+
   .navbar ul.menu-list li {
     opacity: 0;
   }
-  .navbar ul.menu-list.responsive {
+  .navbar .menu-list.responsive {
     top: 0;
     left: 0;
     padding-top: 100px;
@@ -131,7 +151,7 @@ console.log(state)
     background: $light-grey-color;
     padding: 10px;
   }
-  .main-menu.stellarnav > ul > li > a {
+  .main-menu > ul > li > a {
     padding: 10px 30px;
     font-weight: 500;
     font-size: 17px;
