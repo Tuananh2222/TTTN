@@ -8,11 +8,11 @@
 
 <style lang="scss" scoped>
 .body-other {
-  font-weight: 300;
-  font-size: 15px;
-  line-height: 1.7;
-  color: #c4c3ca;
-  background-color: #1f2029;
-  overflow-x: hidden;
+  background: #f6f5f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
 }
 </style>

@@ -23,7 +23,7 @@
         </SwiperSlide>
         <SwiperSlide>
           <div class="img-banner">
-            <img class="img-slide" src="~/public/image/banner.jpg" alt="" />
+            <img class="img-slide" src="~/public/image/no-image.png" alt="" />
           </div>
         </SwiperSlide>
         <SwiperSlide>
@@ -33,7 +33,7 @@
         </SwiperSlide>
         <SwiperSlide>
           <div class="img-banner">
-            <img class="img-slide" src="~/public/image/banner.jpg" alt="" />
+            <img class="img-slide" src="~/public/image/no-image.png" alt="" />
           </div>
         </SwiperSlide>
       </Swiper>
@@ -239,10 +239,10 @@ definePageMeta({
     flex-direction: column;
     align-items: flex-end;
     width: 100%;
-    bottom: 63px;
+    bottom: 163px;
     z-index: 10;
     @include sp {
-      bottom: 25px;
+      bottom: 125px;
     }
     .box-banner-text {
       display: flex;
@@ -272,6 +272,9 @@ definePageMeta({
       }
     }
     .btn-wrapper-banner {
+      display: flex;
+      justify-content: flex-start;
+      width: 10%;
       :deep(.btn) {
         width: 220px;
       }
