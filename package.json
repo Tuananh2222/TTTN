@@ -28,6 +28,7 @@
     "typescript": "^4.9.4"
   },
   "dependencies": {
+    "@firebase/app-types": "^0.9.0",
     "@fortawesome/fontawesome-svg-core": "^6.3.0",
     "@fortawesome/free-brands-svg-icons": "^6.3.0",
     "@fortawesome/free-regular-svg-icons": "^6.3.0",
@@ -44,13 +45,16 @@
     "bootstrap": "^5.2.3",
     "dayjs": "^1.11.7",
     "firebase": "^9.17.2",
+    "firebase-admin": "^11.5.0",
     "lodash": "^4.17.21",
+    "nuxt-vuefire": "^0.1.6",
     "qrcode.vue": "^3.3.3",
     "swiper": "^8.4.7",
     "v-calendar": "^3.0.0-alpha.8",
     "vue": "^3.2.45",
     "vue-cookies": "^1.8.2",
-    "vue-lazyload": "^3.0.0-rc.2"
+    "vue-lazyload": "^3.0.0-rc.2",
+    "vuefire": "^3.1.0"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,css,md}": "prettier --write"

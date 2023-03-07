@@ -1,7 +1,7 @@
 <template>
   <div :class="['container', rotateScreen ? 'right-panel-active' : '']" id="container">
     <div class="form-container sign-up-container">
-      <form action="#">
+      <div class="form">
         <h1>Create Account</h1>
         <div class="social-container">
           <a href="#" class="social"><font-awesome-icon icon="fa-brands fa-facebook-f" /></a>
@@ -11,11 +11,11 @@
         <input type="email" placeholder="Email" />
         <input type="password" placeholder="Password" />
         <input type="password" placeholder="Comfirm Password" />
-        <button>Sign Up</button>
-      </form>
+        <button @click="handleSignUp">Sign Up</button>
+      </div>
     </div>
     <div class="form-container sign-in-container">
-      <form action="#">
+      <div class="form">
         <h1>Sign in</h1>
         <div class="social-container">
           <a href="#" class="social"><font-awesome-icon icon="fa-brands fa-facebook-f" /></a>
@@ -26,7 +26,7 @@
         <input type="password" placeholder="Password" />
         <a href="#">Forgot your password?</a>
         <button>Sign In</button>
-      </form>
+      </div>
     </div>
     <div class="overlay-container">
       <div class="overlay">
@@ -57,21 +57,24 @@ const handleChangeScreen = () => {
   rotateScreen.value = !rotateScreen.value
 }
 
-// const email = ref<string>('')
-// const password = ref('')
-// const auth = getAuth()
-// createUserWithEmailAndPassword(auth, email.value, password.value)
-//   .then((userCredential) => {
-//     // Signed in
-//     // const user = userCredential.user
-//     // console.log(user)
-//     // ...
-//   })
-//   .catch((error) => {
-//     const errorCode = error.code
-//     const errorMessage = error.message
-//     // ..
-//   })
+const email = ref<string>('vut5441@gmail.com')
+const password = ref('261201')
+const auth = getAuth()
+
+const handleSignUp = () => {
+  createUserWithEmailAndPassword(auth, email.value, password.value)
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user
+      console.log(user)
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code
+      const errorMessage = error.message
+      // ..
+    })
+}
 </script>
 
 <style lang="scss" scoped>
@@ -125,7 +128,7 @@ button.ghost {
   border-color: #ffffff;
 }
 
-form {
+.form {
   background-color: #ffffff;
   display: flex;
   align-items: center;

@@ -65,6 +65,7 @@ export default defineNuxtConfig({
         },
       },
     ],
+    'nuxt-vuefire',
   ],
   components: {
     global: true,
@@ -86,4 +87,15 @@ export default defineNuxtConfig({
       paygentKey: '',
     },
   },
+  vuefire: {
+    config: {
+      apiKey: 'AIzaSyCAjnSxmbji_Eig57IMEQ3Vyaq172GdZaU',
+      authDomain: 'tttn-8ae05.firebaseapp.com',
+      projectId: 'tttn-8ae05',
+      storageBucket: 'tttn-8ae05.appspot.com',
+      messagingSenderId: '59283673312',
+      appId: '1:59283673312:web:027e0feb671b360d5e4085',
+      measurementId: 'G-C2EYHRJ9KH',
+    }
+  }
 })
