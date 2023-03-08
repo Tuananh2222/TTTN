@@ -1,35 +1,20 @@
 <template>
-  <div class="swiper-slide">
-    <div class="product-item">
-      <div class="image-holder">
-        <img src="~/public/image/no-image.png" alt="Books" class="product-image" />
-      </div>
-      <div class="box-cotainer">
-        <div class="cart-concern">
-          <div class="cart-button d-flex justify-content-between align-items-center">
-            <button type="button" class="btn-wrap cart-link d-flex align-items-center tooltip">
-              <font-awesome-icon icon="fa-solid fa-cart-shopping" />
-              <span class="tooltip-text">add to cart</span>
-            </button>
-            <button type="button" class="view-btn tooltip d-flex">
-              <font-awesome-icon icon="fa-solid fa-eye" />
-              <span class="tooltip-text">Quick view</span>
-            </button>
-            <button type="button" class="wishlist-btn">
-              <font-awesome-icon icon="heart" class="icon-heart"></font-awesome-icon>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-detail">
-        <h3 class="product-title">
-          <a href="#">{{ nameProduct }}</a>
-        </h3>
-        <span class="item-price text-primary">{{ price }}$</span>
-      </div>
+  <article class="card">
+    <div class="card-img">
+      <img :src="imgUrl" />
     </div>
-  </div>
+    <div class="card-name">
+      <p>{{ nameProduct }}</p>
+    </div>
+    <div class="card-precis">
+      <div href="" class="card-icon"><font-awesome-icon icon="fa-regular fa-heart" /></div>
+      <div class="box-price">
+        <span class="card-preci card-precis-before">$98.00</span>
+        <span class="card-preci card-precis-now">$64.00</span>
+      </div>
+      <div href="" class="card-icon"><font-awesome-icon icon="fa-solid fa-basket-shopping" /></div>
+    </div>
+  </article>
 </template>
 
 <script setup>
@@ -50,74 +35,75 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
-.product-detail {
+.card {
+  position: relative;
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   align-items: center;
-}
-.product-item img.product-image {
-  background: $light-color;
-  border: 1px solid $grey-color;
-  padding: 5px;
-  cursor: pointer;
-  margin-bottom: 10px;
-  width: 100%;
-}
-.product-item {
-  .box-cotainer {
+  padding: 1.5rem 2rem;
+  overflow: hidden;
+  background: #e3f8ff;
+  .card-img {
+    width: 180px;
+    height: auto;
+    padding: 3rem 0;
+    transition: 0.5s;
+  }
+  .card-name {
+    position: absolute;
+    top: 0;
+    width: 3.5rem;
+    height: 100%;
+    writing-mode: vertical-rl;
+    font-weight: bold;
+    color: #000;
+    transition: 0.5s;
+    text-align: center;
+    transform: rotate(180deg);
+    background: #fff;
+    left: -25%;
+  }
+  .card-precis {
     width: 100%;
     display: flex;
     justify-content: center;
-    .cart-concern {
-      background: $light-color;
-      width: 80%;
-      position: absolute;
-      bottom: 300px;
-      z-index: 9;
-      transition: 0.5s ease-out;
-      padding: 20px 30px;
-      opacity: 0;
+    align-items: center;
+    transition: 0.5s;
+    .card-icon {
+      font-size: 1.5rem;
+      color: #161616;
+    }
+    .card-icon:hover {
+      color: #ff5151;
+    }
+    .card-preci {
+      display: block;
+      text-align: center;
+    }
+    .card-precis-before {
+      font-size: 0.75rem;
+      color: #ff5151;
+      margin-bottom: 0.25rem;
+    }
+    .card-precis-now {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    .box-price {
+      margin: 0 10px;
     }
   }
 }
-.product-item:hover .cart-concern {
-  bottom: 280px;
-  opacity: 1;
+/* Hover Move Cards */
+.card:hover {
+  box-shadow: 0 0.5rem 1rem #d1d9e6;
 }
-.cart-concern .cart-button button {
-  background: none;
-  color: $dark-color;
-  height: auto;
-  padding: 0;
-  margin: 0;
-}
-.product-item .wishlist-btn .icon-heart {
-  font-size: 20px;
-  padding-left: 25px;
-}
-.product-item h3.product-title {
-  font-size: 1.4em;
-  margin: 0;
+.card:hover .card-name {
+  left: 0;
 }
 
-.tooltip .tooltip-text {
-  width: 120px;
-  background-color: $primary-color;
-  color: $light-color;
-  font-size: 14px;
-  text-align: center;
-  position: absolute;
-  top: -49px;
-  left: -49px;
-  z-index: 1;
-  padding: 10px 0;
-  visibility: hidden;
-  border-radius: 20px;
-}
-.tooltip:hover .tooltip-text {
-  visibility: visible;
-}
-.product-item .item-price {
-  font-size: 1.8em;
+.card:hover .card-img {
+  transform: rotate(20deg);
+  margin-left: 1rem;
 }
 </style>

@@ -7,13 +7,19 @@ export default defineNuxtConfig({
       viewport: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no',
       title: 'Final Uni',
       meta: [],
-      
+
       script: [
         {
           src: process.env.NUXT_PUBLIC_PAYGENT_TOKEN_JS_URL,
         },
-        
-      ]
+      ],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,400;0,500;1,400&display=swap',
+        },
+      ],
     },
   },
   nitro: {
@@ -96,6 +102,6 @@ export default defineNuxtConfig({
       messagingSenderId: '59283673312',
       appId: '1:59283673312:web:027e0feb671b360d5e4085',
       measurementId: 'G-C2EYHRJ9KH',
-    }
-  }
+    },
+  },
 })

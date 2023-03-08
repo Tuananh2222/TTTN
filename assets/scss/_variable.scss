@@ -1,7 +1,7 @@
 $primary: #0c7159;
 $accent-color: #8d8d8d;
 $dark-color: #000;
-$light-color: #fff;
+$white: #fff;
 $grey-color: #dbdbdb;
 $light-grey-color: #fafafa;
 $primary-color: #6995b1;
@@ -17,7 +17,7 @@ $colors: (
   primary: $primary,
   accent-color: $accent-color,
   dark-color: $dark-color,
-  light-color: $light-color,
+  white: $white,
   grey-color: $grey-color,
   light-grey-color: $light-grey-color,
   primary-color: $primary-color,
@@ -25,3 +25,8 @@ $colors: (
 );
 
 $widthWeb: 1280px;
+$types_button: ('normal', 'ghost');
+
+$types_color: (
+  'gradient': $dark-color,
+);
