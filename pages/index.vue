@@ -72,7 +72,7 @@
     <h1 class="title-shop">BEAUTY SHOP</h1>
     <div class="stall-wrapper">
       <CardProduct
-        :img-url="'https://i.postimg.cc/VsZZJdyZ/DR-removebg-preview.png'"
+        :img-url="'_nuxt/public/image/product1.jpg'"
         :name-product="'Overnight Glow Serum'"
       />
       <CardProduct
@@ -127,7 +127,7 @@ definePageMeta({
       }
       .img-slide {
         width: 100%;
-        height: 700px;
+        height: 550px;
         background-size: cover;
         object-fit: cover;
       }
@@ -212,11 +212,11 @@ definePageMeta({
     h2 {
       font-family: 'Shantell Sans', cursive;
 
-      color: #ffd966;
+      color: #B89379;
       font-weight: 700;
     }
     h1 {
-      color: #ffd966;
+      color: #B89379;
       font-family: 'Shantell Sans', cursive;
       .strong {
         font-family: 'Shantell Sans', cursive;

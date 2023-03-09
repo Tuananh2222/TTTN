@@ -21,7 +21,7 @@
 const props = defineProps({
   imgUrl: {
     type: String,
-    default: false,
+    default: '',
   },
   nameProduct: {
     type: String,
