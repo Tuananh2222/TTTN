@@ -28,6 +28,7 @@
     "typescript": "^4.9.4"
   },
   "dependencies": {
+    "@firebase/app": "^0.9.4",
     "@firebase/app-types": "^0.9.0",
     "@fortawesome/fontawesome-svg-core": "^6.3.0",
     "@fortawesome/free-brands-svg-icons": "^6.3.0",

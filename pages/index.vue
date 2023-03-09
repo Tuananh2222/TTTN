@@ -76,6 +76,34 @@
       <CardProduct :img-url="'_nuxt/public/image/product.png'" :name-product="'Overnight Glow Serum'" />
     </div>
   </div>
+  <div class="content-shop">
+    <h1 class="title-shop">PIXEL Skincare</h1>
+    <div class="wrapper-video">
+      <div class="text">
+        <p>Since 2016, Pixel Skin Care has been at the forefront of the move towards organic and natural skincare.</p>
+        <p>
+          Specialising in emerging niche natural skin care brands, Pixel Skin Care is a safe zone for you and your skin
+          where we have taken special care to hand pick and offer you some of the purest and safest brands from global
+          organic specialists.
+        </p>
+        <p>
+          From cutting edge science to luxurious natural indulgence, we have selected the best products and treatments
+          for healing and improving your well-being.
+        </p>
+      </div>
+      <div class="video-wrapper">
+        <iframe
+          id="video"
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/j4hvdSCV7xc"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
 </template>
 <script lang="ts" setup>
 import CardProduct from '~~/components/generals/cardProduct.vue'
@@ -320,6 +348,22 @@ definePageMeta({
       text-decoration: none;
       color: $white;
     }
+  }
+}
+.wrapper-video {
+  display: flex;
+  padding: 0 2.5rem;
+  .text {
+    text-align: center;
+    padding-top: 1em;
+    flex: 1 0 40%;
+    margin-right: 1em;
+    padding-bottom: 0;
+  }
+  .text p {
+    text-align: justify;
+    padding-bottom: 1em;
+    line-height: 1.4em;
   }
 }
 </style>

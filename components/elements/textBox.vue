@@ -164,6 +164,8 @@ const borderBackgroundStyle = computed(() => {
 }
 
 .error-container {
+  height: 20px;
+  line-height: 20px;
   word-break: normal;
 }
 .error {

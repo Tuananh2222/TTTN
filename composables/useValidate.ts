@@ -18,7 +18,6 @@ export const useValidate = (rules: any, state: any) => {
         state.hasErrors[name] = ''
       }
     }
-    console.log(isValidForm.value)
     isValidForm.value = await $v.value.$validate()
   }
 

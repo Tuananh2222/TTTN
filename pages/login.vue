@@ -8,14 +8,28 @@
           <a href="#" class="social"><font-awesome-icon icon="fa-brands fa-google-plus-g" /></a>
         </div>
         <span>or use your email for registration</span>
-        <TextBox v-model.trim="email" :required="true" :placeholder="'Email'" />
-        <TextBox :placeholder="'Password'" />
-        <TextBox :placeholder="'Comfirm Password'" />
-
-        <!-- <input v-model="email" type="email" placeholder="Email" />
-        <input v-model="password" type="password" placeholder="Password" />
-        <input v-model="comfirmPassword" type="password" placeholder="Comfirm Password" /> -->
-        <button @click="handleSignUp">Sign Up</button>
+        <TextBox
+          v-model.trim="state.email"
+          :err-msg="state.hasErrors.email"
+          :required="true"
+          :placeholder="'Email'"
+          @focusOut="loginStore.checkField('email')"
+        />
+        <TextBox
+          v-model.trim="state.password"
+          :err-msg="state.hasErrors.password"
+          :placeholder="'Password'"
+          type="password"
+          @focusOut="loginStore.checkField('password')"
+        />
+        <TextBox
+          v-model.trim="state.confirmPassword"
+          :err-msg="state.hasErrors.confirmPassword"
+          :placeholder="'Comfirm Password'"
+          type="password"
+          @focusOut="loginStore.checkField('confirmPassword')"
+        />
+        <button @click="submitSignup" :class="isValidForm ? '' : 'disable'">Sign Up</button>
       </div>
     </div>
     <div class="form-container sign-in-container">
@@ -29,7 +43,7 @@
         <input type="email" placeholder="Email" />
         <input type="password" placeholder="Password" />
         <a href="#">Forgot your password?</a>
-        <button>Sign In</button>
+        <button @click="submitSignIn" :class="isValidForm ? '' : 'disable'">Sign In</button>
       </div>
     </div>
     <div class="overlay-container">
@@ -42,7 +56,9 @@
         <div class="overlay-panel overlay-right">
           <h1>Hello, Friend!</h1>
           <p>Enter your personal details and start journey with us</p>
-          <button @click="handleChangeScreen" class="ghost" id="signUp">Sign Up</button>
+          <button @click="handleChangeScreen" class="ghost" id="signUp">
+            Sign Up
+          </button>
         </div>
       </div>
     </div>
@@ -50,10 +66,12 @@
 </template>
 
 <script setup lang="ts">
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
+import { storeToRefs } from 'pinia'
 
 const rotateScreen = ref(false)
-
+const loginStore = useLoginStore()
+const { state, handleSignUp, resetStateToDefault, handleSignIn } = loginStore
+const { isValidForm } = storeToRefs(loginStore)
 definePageMeta({
   layout: 'other',
 })
@@ -61,24 +79,13 @@ const handleChangeScreen = () => {
   rotateScreen.value = !rotateScreen.value
 }
 
-const email = ref<string>('')
-const password = ref('')
-const comfirmPassword = ref('')
-const auth = getAuth()
-
-const handleSignUp = async () => {
-  createUserWithEmailAndPassword(auth, email.value, password.value)
-    .then((userCredential) => {
-      // Signed in
-      const user = userCredential.user
-      console.log(user)
-      // ...
-    })
-    .catch((error) => {
-      const errorCode = error.code
-      const errorMessage = error.message
-      // ..
-    })
+const submitSignup = () => {
+  handleSignUp()
+  resetStateToDefault()
+  rotateScreen.value = false
+}
+const submitSignIn = () => {
+  handleSignIn()
 }
 </script>
 
@@ -118,6 +125,8 @@ button {
   letter-spacing: 1px;
   text-transform: uppercase;
   transition: transform 80ms ease-in;
+  margin-top: 5px;
+  cursor: pointer;
 }
 
 button:active {
@@ -131,6 +140,13 @@ button:focus {
 button.ghost {
   background-color: transparent;
   border-color: #ffffff;
+}
+
+button.disable {
+  background: $disable !important;
+  color: #ccc;
+  pointer-events: none;
+  border: 1px solid #ccc;
 }
 
 .form {
@@ -276,7 +292,7 @@ input {
 }
 
 .social-container {
-  margin: 20px 0;
+  margin-bottom: 20px;
 }
 
 .social-container a {
