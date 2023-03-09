@@ -8,9 +8,13 @@
           <a href="#" class="social"><font-awesome-icon icon="fa-brands fa-google-plus-g" /></a>
         </div>
         <span>or use your email for registration</span>
-        <input type="email" placeholder="Email" />
-        <input type="password" placeholder="Password" />
-        <input type="password" placeholder="Comfirm Password" />
+        <TextBox v-model.trim="email" :required="true" :placeholder="'Email'" />
+        <TextBox :placeholder="'Password'" />
+        <TextBox :placeholder="'Comfirm Password'" />
+
+        <!-- <input v-model="email" type="email" placeholder="Email" />
+        <input v-model="password" type="password" placeholder="Password" />
+        <input v-model="comfirmPassword" type="password" placeholder="Comfirm Password" /> -->
         <button @click="handleSignUp">Sign Up</button>
       </div>
     </div>
@@ -57,11 +61,12 @@ const handleChangeScreen = () => {
   rotateScreen.value = !rotateScreen.value
 }
 
-const email = ref<string>('vut5441@gmail.com')
-const password = ref('261201')
+const email = ref<string>('')
+const password = ref('')
+const comfirmPassword = ref('')
 const auth = getAuth()
 
-const handleSignUp = () => {
+const handleSignUp = async () => {
   createUserWithEmailAndPassword(auth, email.value, password.value)
     .then((userCredential) => {
       // Signed in

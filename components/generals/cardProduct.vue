@@ -38,16 +38,17 @@ const props = defineProps({
 .card {
   position: relative;
   display: flex;
-  // flex-direction: column;
+  flex-direction: column;
   align-items: center;
   padding: 1.5rem 2rem;
   overflow: hidden;
   background: #e3f8ff;
   .card-img {
-    width: 180px;
-    height: auto;
     padding: 3rem 0;
     transition: 0.5s;
+    img {
+      height: auto;
+    }
   }
   .card-name {
     position: absolute;

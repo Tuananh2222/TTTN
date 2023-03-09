@@ -71,18 +71,9 @@
   <div class="content-shop">
     <h1 class="title-shop">BEAUTY SHOP</h1>
     <div class="stall-wrapper">
-      <CardProduct
-        :img-url="'_nuxt/public/image/product1.jpg'"
-        :name-product="'Overnight Glow Serum'"
-      />
-      <CardProduct
-        :img-url="'https://i.postimg.cc/VsZZJdyZ/DR-removebg-preview.png'"
-        :name-product="'Overnight Glow Serum'"
-      />
-      <CardProduct
-        :img-url="'https://i.postimg.cc/VsZZJdyZ/DR-removebg-preview.png'"
-        :name-product="'Overnight Glow Serum'"
-      />
+      <CardProduct :img-url="'_nuxt/public/image/product.png'" :name-product="'Overnight Glow Serum'" />
+      <CardProduct :img-url="'_nuxt/public/image/product.png'" :name-product="'Overnight Glow Serum'" />
+      <CardProduct :img-url="'_nuxt/public/image/product.png'" :name-product="'Overnight Glow Serum'" />
     </div>
   </div>
 </template>
@@ -212,11 +203,11 @@ definePageMeta({
     h2 {
       font-family: 'Shantell Sans', cursive;
 
-      color: #B89379;
+      color: #b89379;
       font-weight: 700;
     }
     h1 {
-      color: #B89379;
+      color: #b89379;
       font-family: 'Shantell Sans', cursive;
       .strong {
         font-family: 'Shantell Sans', cursive;

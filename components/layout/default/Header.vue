@@ -1,40 +1,40 @@
 <template>
   <SearchBox v-if="isShowSearch" @close-search="handleHideSearch" />
-  <div id="header-wrap" border-bottom>
-    <nav class="secondary-nav">
-      <div class="container">
-        <div class="contact-wrapper">
-          <div class="header-contact">
-            <font-awesome-icon icon="fa-solid fa-phone" />
-            <p>Hotline: <b>0971935724</b></p>
-          </div>
-        </div>
-        <div class="menu-user">
-          <div class="menu-user-wrapper">
-            <div class="icon">
-              <font-awesome-icon icon="fa-user" />
-            </div>
-            <div class="icon">
-              <font-awesome-icon icon="fa-clipboard" />
-            </div>
-            <div class="icon">
-              <font-awesome-icon icon="fa-heart" />
-            </div>
-            <div class="icon" @click="handleShowSearch">
-              <font-awesome-icon icon="fa-search" />
-            </div>
-          </div>
-        </div>
+  <div class="header">
+    <div class="img-logo">
+      <div class="main-logo"></div>
+    </div>
+    <div class="header-menu">
+      <li
+        v-for="(item, index) in state.headerList"
+        :key="index"
+        class="menu-item"
+        @click="emits('nextTo', { router: item.to })"
+      >
+        <a>{{ item.text }}</a>
+      </li>
+    </div>
+    <div class="header-icons">
+      <div class="icon">
+        <font-awesome-icon icon="fa-user" />
       </div>
-    </nav>
-    <Menu @next-to="nextPageUser" />
+      <div class="icon">
+        <font-awesome-icon icon="fa-clipboard" />
+      </div>
+      <div class="icon">
+        <font-awesome-icon icon="fa-heart" />
+      </div>
+      <div class="icon" @click="handleShowSearch">
+        <font-awesome-icon icon="fa-search" />
+      </div>
+    </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 import SearchBox from '~~/components/generals/SearchBox.vue'
-import Menu from './Menu.vue'
-const { init, state } = useHeaderStore()
+const { state, init } = useHeaderStore()
+const emits = defineEmits(['nextTo'])
 onMounted(() => {
   init()
 })
@@ -53,39 +53,55 @@ const nextPageUser = ({ router }: { router: string }) => {
 </script>
 
 <style lang="scss" scoped>
-#header-wrap {
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  .secondary-nav {
-    max-width: 100%;
-    .container {
-      display: flex;
-      align-items: center;
-      .contact-wrapper {
-        padding-left: 20px;
-        width: 100%;
-        .header-contact {
-          display: flex;
-          align-items: center;
-          p {
-            margin-left: 5px;
-          }
-          b {
-            font-weight: bold;
-          }
-        }
-      }
-      .menu-user {
-        width: 50%;
-        .menu-user-wrapper {
-          display: flex;
-          justify-content: flex-end;
-          .icon {
-            cursor: pointer;
-            padding-right: 20px;
-          }
-        }
-      }
+.header {
+  position: fixed;
+  background-color: $white;
+  display: flex;
+  align-items: center;
+  height: fit-content;
+  width: 100%;
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-weight: 600;
+  font-size: 15px;
+  border-bottom: 1px solid rgba(44, 45, 42, 0.25);
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 6;
+  padding: 10px 0;
+
+  @include sp {
+    width: calc(100% + 20px);
+    margin-left: -10px;
+  }
+  .img-logo {
+    padding-left: 20px;
+    .main-logo {
+      background: url('@/public/image/logo.jpg');
+      background-position: center;
+      height: 60px;
+      width: 60px;
+      border-radius: 50%;
+    }
+  }
+  .header-menu {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    .menu-item {
+      cursor: pointer;
+      padding: 10px 20px;
+      list-style: none;
+    }
+  }
+  .header-icons {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    .icon {
+      cursor: pointer;
+      padding-right: 20px;
     }
   }
 }

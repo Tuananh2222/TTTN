@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container-input">
     <div v-if="props.label" :class="props.required && 'field-label-require'" class="field-label">{{ label }}</div>
     <div class="sub-container">
       <div :class="[borderBackgroundStyle, props.type === 'search' && 'border-search', 'input-border']">
@@ -90,7 +90,7 @@ const borderBackgroundStyle = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-.container {
+.container-input {
   // margin: auto;
   width: 100%;
   @include pc {
